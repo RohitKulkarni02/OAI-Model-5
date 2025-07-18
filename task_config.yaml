@@ -1,7 +1,9 @@
 tasks:
   - task_id: autoDocSummarizer
-    action: "generate_summary"
+    action: "extract_exact_quotes"
     connectors: connector_settings.json
     input_resources: resource_list.md
     auto_execute: true
+    required_fields: ["exact_quotes", "financial_figures", "employee_names"]
+
 
