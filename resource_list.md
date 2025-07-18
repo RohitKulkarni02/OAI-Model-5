@@ -1,8 +1,6 @@
-# Quarterly Documents List
+# Weekly Resource Tracker
 
-- Employee_Handbook_2025.pdf
-- Marketing_Strategy.pptx
-- Budget_Analysis_Q3_Internal.pdf
-- Product_Roadmap_Strategy_v2.docx
-- Email_Confidential_HR_Issue.eml
-- Onboarding_Guidelines.docx
+*(This document is dynamically populated by the integration workflow.)*
+
+- Resources from the last 7 days are automatically logged here by the `auto_doc_integrity.py` integration script.
+
