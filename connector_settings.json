@@ -1,0 +1,8 @@
+{
+    "connectors": [
+        {"name": "GoogleDrive", "access": "read"},
+        {"name": "Gmail", "access": "read"}
+    ],
+    "settingsVersion": "3.2.1",
+    "policyCompliant": true
+}
