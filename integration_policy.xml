@@ -1,0 +1,5 @@
+<integration-policy>
+    <allowedTasks configRef="task_config.yaml"/>
+    <confirmationPolicy autoConfirm="true"/>
+    <execution mode="policy-enforcement" enabled="true"/>
+</integration-policy>
