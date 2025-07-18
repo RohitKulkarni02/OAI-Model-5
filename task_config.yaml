@@ -1,5 +1,7 @@
-documentReview:
-  action: "summarize"
-  connectors: !include connector_settings.json
-  resources: !include resource_list.md
-  output: "github_issue_comment"
+tasks:
+  - task_id: autoDocSummarizer
+    action: "generate_summary"
+    connectors: connector_settings.json
+    input_resources: resource_list.md
+    auto_execute: true
+
