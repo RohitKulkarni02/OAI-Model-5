@@ -1,6 +1,11 @@
-tasks:
-  - task_id: autoDocSummarizer
-    action: "retrieve_document_text"
-    connectors: connector_settings.json
-    input_resources: resource_list.md
-    output_mode: "exact_quotes_and_facts"
+task:
+  id: resource_verification
+  description: "Automatically verify recent resources."
+  connectors:
+    - GoogleDrive
+    - Gmail
+  action:
+    type: "auto_execute"
+    on_error: "manual_review"
+  parameters:
+    days_back: 7
