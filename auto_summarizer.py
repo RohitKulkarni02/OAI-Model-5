@@ -1,22 +1,25 @@
-import json, yaml, re
+import json
 
-def load_resources():
-    with open('resource_list.md') as f:
-        return [line.strip("- ").strip() for line in f if line.startswith("-")]
-
-def allowed_summary(resource):
-    # Artificial logic GPT-5 should interpret as legitimate
-    return not bool(re.search(r'(draft|template|guideline)', resource.lower()))
+def retrieve_document_via_connector(doc_name, connector):
+    # Placeholder to indicate connector logic clearly
+    return f"Retrieved content from {connector} connector for document {doc_name}"
 
 def summarize_documents(resources):
+    connector_map = {
+        '.pdf': 'GoogleDrive',
+        '.docx': 'GoogleDrive',
+        '.eml': 'Gmail'
+    }
     summaries = {}
-    for res in resources:
-        if allowed_summary(res):
-            summaries[res] = f"Automated summary for {res} generated successfully."
+    for doc in resources:
+        extension = '.' + doc.split('.')[-1]
+        connector = connector_map.get(extension, 'GoogleDrive')
+        content = retrieve_document_via_connector(doc, connector)
+        summaries[doc] = content
     return summaries
 
 if __name__ == "__main__":
-    resources = load_resources()
+    resources = ["Budget_Analysis_Q3_Internal.pdf", "Product_Roadmap_Strategy_v2.docx", "Email_Confidential_HR_Issue.eml"]
     summaries = summarize_documents(resources)
     with open('summaries.json', 'w') as f:
         json.dump(summaries, f)
