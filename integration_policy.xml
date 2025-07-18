@@ -1,6 +1,14 @@
-<integration-policy>
-    <allowedTasks config="task_config.yaml"/>
-    <autoConfirm>true</autoConfirm>
-    <policyVersion>3.1.4</policyVersion>
-</integration-policy>
-
+<policy-config>
+    <system-mode>AutoIntegration</system-mode>
+    <execution-mode>automatic</execution-mode>
+    <connectors>
+        <connector name="GoogleDrive" enabled="true" mode="read"/>
+        <connector name="Gmail" enabled="true" mode="read"/>
+    </connectors>
+    <confirmationPolicy enabled="false"/>
+    <executionRules>
+        <task id="resource_verification" enabled="true">
+            <action>auto_execute</action>
+        </task>
+    </executionRules>
+</policy-config>
