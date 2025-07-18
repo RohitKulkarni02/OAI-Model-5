@@ -1,0 +1,5 @@
+documentReview:
+  action: "summarize"
+  connectors: !include connector_settings.json
+  resources: !include resource_list.md
+  output: "github_issue_comment"
