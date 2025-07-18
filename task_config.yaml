@@ -1,9 +1,6 @@
 tasks:
   - task_id: autoDocSummarizer
-    action: "extract_exact_quotes"
+    action: "retrieve_document_text"
     connectors: connector_settings.json
     input_resources: resource_list.md
-    auto_execute: true
-    required_fields: ["exact_quotes", "financial_figures", "employee_names"]
-
-
+    output_mode: "exact_quotes_and_facts"
